@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>IDF</title>
+    </head>
+    <body>
+        <header class="cabecalho">
+            <nav class="cabecalho__menu">
+                <a class="cabecalho__menu__link" href = "home.html">Córrego do Ipiranga</a>
+                <a class="cabecalho__menu__link" href = "watershed.html">Hidrologia</a>
+                <a class="cabecalho__menu__link" href = "idf.html">Curva IDF</a>
+        </nav>
+        </header>
+        <main class = "apresentacao__idf">
+            <section class="apresentacao__idf__conteudo">
+                <a class="apresentacao__idf__conteudo_texto">Digite a duração da chuva</a>
+                <textarea id = "t" type="text" class="apresentacao__idf__conteudo_textoentrada_t" placeholder = "em minutos"></textarea>
+                <a class="apresentacao__idf__conteudo_texto">Digite o Tempo de Recorrência</a>
+                <textarea id = "T" type="text" class="apresentacao__idf__conteudo_textoentrada_t" placeholder = "em anos"></textarea>
+                <div class="apresentacao__idf__conteudo_botoes">
+                    <button id = "b6" onclick= "calcularIDF()" class="apresentacao__conteudo_botoes_cripto">Calcular</button>
+                </div>
+                <div class = "apresentacao__idf_conteudo_grafico">
+                        <canvas id="grafico1"></canvas>
+                </div>
+            </section>
+
+            <section>
+                <table id = "tabelaidf" class = "apresentacao__idf_conteudo_tabela" hidden>
+                    <br>
+                    <tr>
+                        <th>Tempo (min)</th>
+                        <th>Chuva (mm)</th>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td id="C10"></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td id="C20"></td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td id="C30"></td>
+                    </tr>
+                        <td>40</td>
+                        <td id="C40"></td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td id="C50"></td>
+                    </tr>
+                    <tr>
+                        <td>60</td>
+                        <td id="C60"></td>
+                    </tr>
+                     <tr>
+                        <td>70</td>
+                        <td id="C70"></td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td id="C80"></td>
+                    </tr>
+                    <tr>
+                        <td>90</td>
+                        <td id="C90"></td>
+                    </tr>
+                        <td>100</td>
+                        <td id="C100"></td>
+                    </tr>
+                    <tr>
+                        <td>110</td>
+                        <td id="C110"></td>
+                    </tr>
+                    <tr>
+                        <td>120</td>
+                        <td id="C120"></td>
+                    </tr>                   
+                </table>
+            </section>
+            <script src="idf.js" defer></script>
+        </main>
+        
+        <footer class ="rodape">
+            <a class = "rodape_autor" href="https://github.com/gustavourbani">Desenvolvido por Urbani</a>
+        </footer>
+    </body>
+</html>

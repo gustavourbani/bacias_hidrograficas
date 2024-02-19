@@ -17,20 +17,25 @@
         </header>
         <main class = "apresentacao__idf">
             <section class="apresentacao__idf__conteudo">
-                <a class="apresentacao__idf__conteudo_texto">Digite a duração da chuva</a>
-                <textarea id = "t" type="text" class="apresentacao__idf__conteudo_textoentrada_t" placeholder = "em minutos"></textarea>
-                <a class="apresentacao__idf__conteudo_texto">Digite o Tempo de Recorrência</a>
+                <a class="apresentacao__idf__conteudo_texto">Digite o Tempo de Recorrência:</a>
                 <textarea id = "T" type="text" class="apresentacao__idf__conteudo_textoentrada_t" placeholder = "em anos"></textarea>
                 <div class="apresentacao__idf__conteudo_botoes">
-                    <button id = "b6" onclick= "calcularIDF()" class="apresentacao__conteudo_botoes_cripto">Calcular</button>
+                    <button id = "b6" onclick= "calcularIDF()" class="apresentacao__conteudo_botoes">Calcular</button>
                 </div>
                 <div class = "apresentacao__idf_conteudo_grafico">
                         <canvas id="grafico1"></canvas>
                 </div>
             </section>
 
-            <section>
+            <section class = apresentacao__idf__conteudo_2>
+                <h1>IDF de São Paulo (Governo do Estado de São Paulo, 2018).</h1>
+                <img class = "apresentacao__idf__conteudo_2_img2" id = "img2"  src="./assets/eq2.png" alt="eq">
+                <h2> A  chuva  de  projeto tem duração de 2 horas e foi  discretizada  em  intervalos de 10 minutos. A discretização temporal foi realizada pelo método de Huff (1967). Para as chuvas de projeto na cidade de São Paulo, conforme recomendação de São Paulo (Prefeitura Municipal de  São  Paulo,  2012)</h2>
                 <table id = "tabelaidf" class = "apresentacao__idf_conteudo_tabela" hidden>
+                <div class = "apresentacao__idf__conteudo_2_img2_3" id = "img2_3">
+                <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/desenvolvimento_urbano/arquivos/manual-drenagem_v3.pdf"><img class = "apresentacao__idf__conteudo_2_img3" id = "img3"  src="./assets/manual.png" alt="manual"></a>
+                <a href="https://drive.google.com/file/d/1JHG08Ql21xZM3jBoGZwgzVR4x2224eR2/view"><img class = "apresentacao__idf__conteudo_2_img4" id = "img4"  src="./assets/daee.png" alt="daee"></a>
+                </div>
                     <br>
                     <tr>
                         <th>Tempo (min)</th>

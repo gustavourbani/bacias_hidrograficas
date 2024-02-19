@@ -1,3 +1,5 @@
+
+
 function exibirTextoNaTelaId(tag, texto) {
     let campo = document.getElementById(tag);
     campo.innerHTML = texto;
@@ -10,9 +12,13 @@ function exibirTextoNaTela(tag, texto) {
 
 
 document.getElementById('b6').onclick = function calcularIDF(){
-    ts = document.getElementById('t').value;
+    document.querySelector('h1').setAttribute('hidden', true);
+    document.getElementById('img2').setAttribute('hidden', true);
+    document.getElementById('img3').setAttribute('hidden', true);
+    document.getElementById('img4').setAttribute('hidden', true);
+    document.querySelector('h2').setAttribute('hidden', true);
     Ts = document.getElementById('T').value;
-    t = parseFloat(ts);
+    t = 120;
     T = parseFloat(Ts);
     i1 = 32.77*((t+20)**(-0.878));
     i2 = (16.1*((t+30)**(-0.9306)));
@@ -39,23 +45,29 @@ document.getElementById('b6').onclick = function calcularIDF(){
   exibirTextoNaTelaId('C120', huff[11]);
 
   const ctx = document.getElementById('grafico1');
+  
+  var grafico1 = Chart.getChart("grafico1");
+  if(grafico1){
+    grafico1.destroy();
+  }
 
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120],
-        datasets: [{
-          label: 'Chuva em MM',
-          data: huff,
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
+  grafico1 = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120],
+      datasets: [{
+        label: 'Chuva em MM',
+        data: huff,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
         }
       }
-    });
-  }
+    }
+  });
+}
+
